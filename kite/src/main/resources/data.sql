@@ -1,2 +1,2 @@
-INSERT INTO Entry(name,latitude) VALUES ('hello',1);
+INSERT INTO entry(name,latitude) VALUES ('hello',1);
 COMMIT ;

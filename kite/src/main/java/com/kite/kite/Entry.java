@@ -12,38 +12,32 @@ public class Entry {
     private Integer id;
     private String name;
     private Integer latitude;
-  //  private Integer longitude;
-   // private Double windProbability;
-  //  private String country;
-  //  private String whenToGo;
 
-    public Entry(final String name, final Integer latitude, final Integer longitude,
-                 final Double windProbability, final String country, final String whenToGo){
-       //this.country = country;
-        this.latitude = latitude;
-        this.name = name;
-        //this.longitude = longitude;
-      //  this.whenToGo =  whenToGo;
-       // this.windProbability = windProbability;
+    public Entry(){
+
     }
-//    public Double getWindProbability() {
-//        return windProbability;
-//    }
+
+    public Integer getId() {
+        return id;
+    }
 
     public Integer getLatitude() {
         return latitude;
     }
 
-//    public Integer getLongitude() {
-//        return longitude;
-//    }
-
     public String getName() {
         return name;
     }
 
-//    public String getCountry() {
-//        return country;
-//    }
+    public void setLatitude(Integer latitude) {
+        this.latitude = latitude;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }
