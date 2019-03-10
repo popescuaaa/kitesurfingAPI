@@ -1,11 +1,9 @@
 package app.kitesurfing.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "spots")
 public class Spot {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
