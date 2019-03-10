@@ -86,7 +86,7 @@ public class Spot {
                 '}';
     }
 
-    public Spot(String spotName, Double latitude, Double longitude, String spotCountry, String spotTime, Double spotWindProb) {
+    public Spot(String spotName, Double longitude, Double latitude,Double spotWindProb, String spotCountry, String spotTime) {
         this.spotName = spotName;
         this.latitude = latitude;
         this.longitude = longitude;

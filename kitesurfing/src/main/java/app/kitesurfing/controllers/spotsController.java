@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class spotsController {
-    @Autowired(required = true)
+
+    @Autowired
     private SpotsRepository repository;
 
     @ResponseBody
     @GetMapping("/api/spots")
     public Iterable<Spot> spotsResponseAll(){
-       return this.repository.findAll();
+        return repository.findAll();
     }
 
 

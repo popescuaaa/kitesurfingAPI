@@ -1,5 +1,7 @@
 package app.kitesurfing.entities;
 
+import org.apache.catalina.User;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -50,5 +52,9 @@ public class Users {
     public Users(String name, String password) {
         this.name = name;
         this.password = password;
+    }
+
+    public Users(){
+
     }
 }
