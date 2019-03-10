@@ -1,13 +1,13 @@
-package com.kite.kite;
+package app.kitesurfing;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KiteApplication {
+public class KitesurfingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KiteApplication.class, args);
+		SpringApplication.run(KitesurfingApplication.class, args);
 	}
 
 }
