@@ -19,7 +19,27 @@ public class SpotController {
     @Autowired
     private ISpotService iSpotService;
 
-    // -------------------Retrieve All Spots---------------------------------------------
+    // -------------------Filter methods explained----------------------------------------
+    @GetMapping("filters")
+    public String getFilterMethods() throws JSONException{
+        JSONArray jsonArray = new JSONArray();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("keyword"," - > effect");
+        jsonObject.put("countries", "get all spots countries");
+        jsonObject.put("windProbability", "get all spots windProbability");
+        jsonObject.put("windProbability%lowerBound%upperBound",
+                "filter windProbability in specific interval");
+        jsonObject.put("%id", "get specific spot with specific id");
+        jsonObject.put("coordinates", "get all spots coordinates - latitude and longitude");
+        jsonObject.put("coordinates%aproximateLatitude%aproximateLogitude",
+                "filter all spots coordinates in specific range");
+
+        jsonArray.put(jsonObject);
+        return jsonArray.toString(4);
+
+    }
+
+    // -------------------Retrieve All Spots-----------------------------------------------
 
     @GetMapping(value = "", produces = "application/json")
     public String getAllSpots() throws JSONException{
@@ -46,6 +66,8 @@ public class SpotController {
 
         return jsonArray.toString(4);
     }
+
+    // Filters
 
     // -------------------Retrieve All Spots Countries--------------------------------------
 
@@ -94,4 +116,22 @@ public class SpotController {
         }
         return iterableSpots.get(id).toString();
     }
+
+    // -------------------Retrieve All Spots WindProbability---------------------------------
+
+    @GetMapping("windProbability")
+    public String getAllSpotsWindProbability() throws JSONException{
+        List<Spot> spots = iSpotService.findAll();
+        JSONArray jsonArray = new JSONArray();
+        for (Spot spot : spots) {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("windProbability", spot.getWindProbability());
+            jsonArray.put(jsonObject);
+        }
+
+        return jsonArray.toString(4);
+    }
+
+
+
 }

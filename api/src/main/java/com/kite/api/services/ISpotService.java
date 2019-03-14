@@ -8,4 +8,5 @@ public interface ISpotService {
     List<String> findAllCountries();
     Boolean addNewSpotToFavourites(Spot spot);
     Boolean deleteFromFavourites(Integer id);
+    List<Spot> findFavouritesSpots();
 }
