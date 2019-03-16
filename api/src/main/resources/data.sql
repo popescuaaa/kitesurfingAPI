@@ -71,3 +71,4 @@ INSERT INTO spots(name,longitude,latitude,windProbability,country,whenToGo) VALU
 INSERT INTO spots(name,longitude,latitude,windProbability,country,whenToGo) VALUES ('Paracas, Kangaroo Kite Shack',-76.2552,-13.8589,100,'Peru','OCTOBER');
 INSERT INTO spots(name,longitude,latitude,windProbability,country,whenToGo) VALUES ('Socotra Island - Qualansiyah',53.5700,12.7200,100,'Oman','AUGUST');
 INSERT INTO spots(name,longitude,latitude,windProbability,country,whenToGo) VALUES ('Westpunt (Westpoint)',-70.0594,12.6164,100,'Venezuela','APRIL');
+INSERT INTO users(name,password) VALUES ('admin','admin');

@@ -1,15 +1,14 @@
 package com.kite.api.controllers;
-import com.fasterxml.jackson.annotation.JsonAlias;
+
 import com.kite.api.entities.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.*;
 import com.kite.api.services.ISpotService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -95,7 +94,7 @@ public class SpotController {
 
     // -------------------Retrieve Spot By Index--------------------------------------------
 
-    @GetMapping("{id}")
+    @GetMapping(value = "{id}", produces = "application/json")
     public String getSpotById(@PathVariable(value = "id") Integer id) throws JSONException{
         List<Spot> spots = iSpotService.findAll();
         if (spots.isEmpty()) {
@@ -119,7 +118,7 @@ public class SpotController {
 
     // -------------------Retrieve All Spots WindProbability---------------------------------
 
-    @GetMapping("windProbability")
+    @GetMapping(value = "windProbability", produces = "application/json")
     public String getAllSpotsWindProbability() throws JSONException{
         List<Spot> spots = iSpotService.findAll();
         JSONArray jsonArray = new JSONArray();

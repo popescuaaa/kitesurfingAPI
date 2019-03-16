@@ -20,10 +20,6 @@ import java.util.List;
 
 @Service
 public class SpotService implements ISpotService {
-    private static final Integer INITIAL_SIZE_TEMPORARY_ARRAY = 10;
-    private JSONArray favouritesSpots = new JSONArray();
-
-
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -47,36 +43,6 @@ public class SpotService implements ISpotService {
         for (Spot spot : spots) countries.add(spot.getCountry());
         return countries;
     }
-
-    @Override
-    public Boolean addNewSpotToFavourites(JSONObject spot) {
-        if (spot == null) {
-            return false;
-        } else {
-            favouritesSpots.put(spot);
-            return true;
-        }
-    }
-
-    @Override
-    public Boolean deleteFromFavourites(Integer id) {
-        try {
-
-            if (favouritesSpots.get(id) == null) {
-                return false;
-            } else {
-                favouritesSpots.remove(id);
-                return true;
-            }
-        } catch (JSONException e) {
-            return false;
-        }
-    }
-
-    @Override
-    public List<Spot> findFavouritesSpots() {
-        return favouritesSpots;
-    }
-
+    
 
 }

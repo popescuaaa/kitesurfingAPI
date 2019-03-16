@@ -1,6 +1,4 @@
-package app.kitesurfing.entities;
-
-import org.apache.catalina.User;
+package com.kite.api.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,12 +6,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private String name;
-    private String password;
+    Integer id;
+    String name;
+    String password;
+
+    public User(){
+
+    }
+
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
+
 
 
     public Integer getId() {
@@ -42,19 +50,10 @@ public class Users {
 
     @Override
     public String toString() {
-        return "Users{" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 '}';
-    }
-
-    public Users(String name, String password) {
-        this.name = name;
-        this.password = password;
-    }
-
-    public Users(){
-
     }
 }

@@ -30,6 +30,7 @@ public class Spot {
         this.whenToGo = whenToGo;
     }
 
+
     public Integer getId() {
         return id;
     }
