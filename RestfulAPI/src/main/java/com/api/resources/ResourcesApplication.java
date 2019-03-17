@@ -1,3 +1,6 @@
+/**
+ * @author: Popescu Andrei-Gabriel
+ */
 package com.api.resources;
 
 import org.springframework.boot.SpringApplication;

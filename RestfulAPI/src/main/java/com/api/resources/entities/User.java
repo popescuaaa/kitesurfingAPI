@@ -12,15 +12,17 @@ public class User {
     private Integer id;
     private String name;
     private String password;
-    private boolean isLogedIn = false;
+    private UserType userType;
+    private boolean isLoggedIn = false;
 
     public User(){
 
     }
 
-    public User(String name, String password) {
+    public User(String name, String password, UserType userType) {
         this.name = name;
         this.password = password;
+        this.userType = userType;
     }
 
     public Integer getId() {
@@ -48,11 +50,19 @@ public class User {
     }
 
     public boolean isLogedIn() {
-        return isLogedIn;
+        return isLoggedIn;
     }
 
     public void setLogedIn(boolean logedIn) {
-        isLogedIn = logedIn;
+        isLoggedIn = logedIn;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
 
     @Override
@@ -61,6 +71,8 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
+                ", userType=" + userType +
+                ", isLogedIn=" + isLoggedIn +
                 '}';
     }
 }

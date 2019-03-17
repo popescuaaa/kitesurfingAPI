@@ -9,6 +9,11 @@ public class JSONErrors {
     private static JSONObject message = new JSONObject();
     private static JSONObject errorCode = new JSONObject();
 
+    /**
+     *
+     * @return
+     * @throws JSONException
+     */
     public static JSONArray NO_RECORD_WITH_ID() throws JSONException {
 
 
@@ -20,6 +25,11 @@ public class JSONErrors {
         return jsonArray;
     }
 
+    /**
+     *
+     * @return
+     * @throws JSONException
+     */
     public static JSONArray NO_RECORDS_IN_DB() throws JSONException {
 
 
@@ -31,6 +41,11 @@ public class JSONErrors {
         return jsonArray;
     }
 
+    /**
+     *
+     * @return
+     * @throws JSONException
+     */
     public static JSONArray NO_USER_LOGGED() throws JSONException {
 
 
@@ -41,4 +56,6 @@ public class JSONErrors {
 
         return jsonArray;
     }
+
+
 }

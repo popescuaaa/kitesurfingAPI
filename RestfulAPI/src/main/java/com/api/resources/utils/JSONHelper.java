@@ -1,6 +1,7 @@
 package com.api.resources.utils;
 
 import com.api.resources.entities.Spot;
+import com.api.resources.entities.User;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -86,12 +87,25 @@ public class JSONHelper {
         return jsonArray;
     }
 
+    /**
+     *
+     * @param integer
+     * @return
+     * @throws JSONException
+     */
     public static JSONObject createJSONObject(Integer integer) throws JSONException{
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("windProbability", integer);
         return jsonObject;
 
     }
+
+    /**
+     *
+     * @param integers
+     * @return
+     * @throws JSONException
+     */
     public static JSONArray createJSONArrayFromIntegers(List<Integer> integers) throws JSONException {
         JSONArray jsonArray = new JSONArray();
         for (Integer integer :  integers) {
@@ -99,4 +113,44 @@ public class JSONHelper {
         }
         return jsonArray;
     }
+
+    /**
+     *
+     * @param user
+     * @return
+     * @throws JSONException
+     */
+    public static JSONObject createJSONObject(User user) throws JSONException {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("user", user.getName());
+        if (user.isLogedIn())
+            jsonObject.put("status", "ACTIVE");
+        else
+            jsonObject.put("status", "INACTIVE");
+
+        return jsonObject;
+    }
+
+    /**
+     *
+     * @param users
+     * @return
+     * @throws JSONException
+     */
+    public static JSONArray allUserInSystem(List<User> users) throws JSONException{
+        JSONArray jsonArray = new JSONArray();
+        for (User user : users) {
+            jsonArray.put(createJSONObject(user));
+        }
+
+        return jsonArray;
+    }
+
+    public static JSONObject forgotPassword(String password) throws JSONException{
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("Forgotten password", password);
+        jsonObject.put("Status","Please require admin advice in future!");
+        return jsonObject;
+    }
+
 }
